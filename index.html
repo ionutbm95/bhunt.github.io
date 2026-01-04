@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Platformă de Vânătoare Cinematic</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* HERO CINEMATIC MULTI-LAYER */
+        .hero {
+            position: relative;
+            height: 80vh; /* mai mică înălțime */
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            will-change: transform;
+        }
+
+        .layer-bg {
+            background-image: url('https://images.unsplash.com/photo-1543946207-39bd91e70ca7');
+            z-index: 1;
+        }
+
+        .layer-fog {
+            background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9'); /* semi-transparent forest fog */
+            opacity: 0.3;
+            z-index: 2;
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(0,0,0,0.35);
+            padding: 0 15px;
+        }
+
+        .hero-overlay h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .hero-overlay p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+        }
+
+        /* Glassmorphism content sections */
+        .glass-section {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .text-green { color: #2f5d3a; }
+        .bg-green { background-color: #2f5d3a; }
+
+        /* Navbar effect */
+        .navbar-custom {
+            background: rgba(0,0,0,0.5);
+            transition: background 0.3s ease;
+        }
+
+        .navbar-scrolled {
+            background: rgba(0,0,0,0.9) !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">VânătoarePro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Acasă</a></li>
+                <li class="nav-item"><a class="nav-link" href="#fonduri">Fonduri</a></li>
+                <li class="nav-item"><a class="nav-link" href="#partide">Partide</a></li>
+                <li class="nav-item"><a class="nav-link" href="#legislatie">Legislație</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="layer layer-bg" id="layerBg"></div>
+    <div class="layer layer-fog" id="layerFog"></div>
+    <div class="hero-overlay" data-aos="fade-up">
+        <h1>Vânătoare responsabilă, conectată cu natura</h1>
+        <p>Platformă modernă pentru gestionarea fondurilor cinegetice și partidelor de vânătoare.</p>
+        <a href="#fonduri" class="btn btn-success btn-lg">Începe acum</a>
+    </div>
+</section>
+
+<!-- CONTENT SECTIONS -->
+<section class="content container py-5">
+    <div class="row g-4">
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-section text-center">
+                <h5 class="text-green">Fonduri</h5>
+                <p>Date despre fonduri și specii.</p>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-section text-center">
+                <h5 class="text-green">Partide</h5>
+                <p>Planificare și organizare.</p>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="glass-section text-center">
+                <h5 class="text-green">Legislație</h5>
+                <p>Reglementări actualizate.</p>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="glass-section text-center">
+                <h5 class="text-green">Comunitate</h5>
+                <p>Vânători și asociații.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-3 text-center">
+    <div class="container">
+        <small>&copy; 2026 VânătoarePro</small>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000 });
+
+    // Multi-layer parallax
+    window.addEventListener('scroll', function() {
+        const scroll = window.pageYOffset;
+        const layerBg = document.getElementById('layerBg');
+        const layerFog = document.getElementById('layerFog');
+
+        layerBg.style.transform = `translateY(${scroll * 0.2}px)`;
+        layerFog.style.transform = `translateY(${scroll * 0.5}px)`;
+    });
+
+    // Navbar color change on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar-custom');
+        if(window.scrollY > 50){
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
+</script>
+</body>
+</html>
